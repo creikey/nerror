@@ -15,12 +15,10 @@
 #define HIH_THRESH_COLOR "\033[31m"
 // -------------------ends---------------------
 
-
 #ifndef INCLUDE_COLORS
 #define LOW_THRESH_COLOR "\033[0m"
 #define MED_THRESH_COLOR "\033[0m"
 #define HIH_THRESH_COLOR "\033[0m"
 #endif // ifndef INCLUDE_COLORS
-
 
 #endif // H_CONF
