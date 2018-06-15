@@ -7,9 +7,9 @@
 #define INCLUDE_DATE
 #define INCLUDE_COLORS
 
-#define LOW_THRESH_MESSAGE "             -- "
-#define MED_THRESH_MESSAGE " ⚡ Warning ⚡ -- "
-#define HIH_THRESH_MESSAGE " ⚠️ ERROR ⚠️  -- "
+#define LOW_THRESH_MESSAGE "   Notice   -- "
+#define MED_THRESH_MESSAGE " ⚡Warning  -- "
+#define HIH_THRESH_MESSAGE " ⚠️ ERROR    -- "
 #define LOW_THRESH_COLOR "\033[0m"
 #define MED_THRESH_COLOR "\033[33m"
 #define HIH_THRESH_COLOR "\033[31m"
