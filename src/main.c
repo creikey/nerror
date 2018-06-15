@@ -4,9 +4,10 @@
 
 void fprint_usage(FILE *fp)
 {
-    fprintf(fp, "nerror is a command line tool for logging\n");
-    fprintf(fp, "-- USAGE\n");
-    fprintf(fp, "nerror -l [low/medium/high] 'Logging text'\n");
+    fprintf(fp, "\nnerror is a command line tool for logging\n");
+    fprintf(fp, "\nUsage:\n");
+    fprintf(fp, "nerror -l [low/medium/high] 'Logging text' - logs text\n");
+    fprintf(fp, "nerror [--help/-h]                         - shows this menu\n");
 }
 
 int main(int argc, char **argv)
@@ -30,7 +31,15 @@ int main(int argc, char **argv)
             {
                 if (strcmp(argv[2], THRESH_STRING[i]) == 0)
                 {
+                    if (argc <= 3)
+                    {
+                        NERROR(stderr, high, "You must provide a string to print");
+                        NERROR(stderr, low, "Usage");
+                        fprint_usage(stderr);
+                        return 1;
+                    }
                     NERROR(stdout, (thresh)i, argv[3]);
+                    return 0;
                 }
             }
             NERROR(stderr, high, "Unrecognized threshold %s", argv[2]);

@@ -2,6 +2,7 @@
 #define H_NERROR
 
 #include <stdio.h>
+#include <stdint.h>
 
 #define FOREACH_THRESH(THRESH) \
     THRESH(low)                \
