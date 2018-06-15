@@ -6,14 +6,14 @@
 void _print_prefix(FILE *f, thresh t)
 {
     #ifdef INCLUDE_DATE
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
+    time_t ti = time(NULL);
+    struct tm tm = *localtime(&ti);
     fprintf(f, "%d-%d-%d ", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
     #endif // INCLUDE_DATE
     #ifdef INCLUDE_TIME
     #ifndef INCLUDE_DATE
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
+    time_t ti = time(NULL);
+    struct tm tm = *localtime(&ti);
     #endif // INCLUDE_DATE
     fprintf(f, "%d:%d:%d ", tm.tm_hour, tm.tm_min, tm.tm_sec);
     #endif // INCLUDE_TIME
