@@ -7,6 +7,10 @@
 #include "conf.h"
 #include "nerror.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 char *_time_int(int in_digit)
 {
     size_t t_return_size = 3;
@@ -25,7 +29,7 @@ char *_time_int(int in_digit)
     return to_return;
 }
 
-void _print_prefix(FILE *f, thresh t)
+void _print_prefix(FILE *f, thresh t, int line, const char *file, const char *function)
 {
 #ifdef INCLUDE_DATE
     time_t ti = time(NULL);
@@ -45,6 +49,12 @@ void _print_prefix(FILE *f, thresh t)
     free(mins);
     free(secs);
 #endif // INCLUDE_TIME
+#ifdef INCLUDE_POSITION
+    fprintf(f, "(%s, %d) ", file, line);
+#endif // INCLUDE_POSITION
+#ifdef INCLUDE_FUNCTION
+    fprintf(f, "[%s] ", function);
+#endif // INCLUDE_FUNCTION
     switch (t)
     {
     case low:
@@ -58,3 +68,7 @@ void _print_prefix(FILE *f, thresh t)
         break;
     }
 }
+
+#ifdef __cplusplus
+}
+#endif

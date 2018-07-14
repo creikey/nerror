@@ -2,6 +2,9 @@
 #include <string.h>
 #include "nerror.h"
 
+static const char *THRESH_STRING[] = {
+    FOREACH_THRESH(GENERATE_STRING)};
+
 void fprint_usage(FILE *fp)
 {
     fprintf(fp, "\nnerror is a command line tool for logging\n");

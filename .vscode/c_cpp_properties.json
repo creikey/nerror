@@ -10,7 +10,9 @@
             },
             "includePath": [
                 "${workspaceFolder}",
-                "${workspaceFolder}/src/nerror1"
+                "${workspaceFolder}/src/nerror1",
+                "/usr/include",
+                "/usr/local/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
